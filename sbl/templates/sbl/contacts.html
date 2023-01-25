@@ -1,8 +1,10 @@
 {% extends 'sbl/base.html'%}
-
+{% load mediapath from template_filters %}
 {% block content %}
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h1 class="display-4">Контакты</h1>
+<!--    <img src="{{'space.jpg'|mediapath}}">-->
+    <img src="{% mediapath 'space.jpg' %}">
 </div>
 
 <div class="container">
