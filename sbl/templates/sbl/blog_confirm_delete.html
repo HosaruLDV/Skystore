@@ -1,0 +1,22 @@
+{% extends 'sbl/base.html'%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="col-5">
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            <p><h5> Вы действительно хотите удалить статью {{object.name}}? </h5></p>
+            <a class="p-2 btn btn-primary" href="{% url 'sbl:blog_detail' object.pk %}">Отменить</a>
+            <button class="p-2 btn btn-outline-danger bg-primary-subtle" type="submit">Удалить</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
+{% endblock %}

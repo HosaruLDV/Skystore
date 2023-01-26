@@ -1,0 +1,21 @@
+{% extends 'sbl/base.html'%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="col-5">
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="p-2 btn btn-outline-primary bg-primary-subtle"  type="submit">Отправить</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
+{% endblock %}

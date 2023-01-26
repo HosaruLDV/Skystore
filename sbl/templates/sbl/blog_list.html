@@ -1,0 +1,26 @@
+{% extends 'sbl/base.html'%}
+{% block content %}
+<div class="container">
+    <div class="row text-center">
+        {% for object in object_list %}
+        {% if object.status == 'True' %}
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{object.image}}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{object.heading}}</h5>
+                    <p class="card-text">{{object.content}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{object.create_date}}</li>
+                    <li class="list-group-item">{{object.view}}</li>
+                </ul>
+                <div class="card-body">
+                    <a href="{% url 'sbl:blog_detail' object.pk %}" class="btn btn-outline-success bg-primary-subtle">Просмотр</a>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% endblock %}
