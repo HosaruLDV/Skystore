@@ -9,7 +9,7 @@
 <body>
 <div class="col-5">
     <div class="card-body">
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
             <button class="p-2 btn btn-outline-primary bg-primary-subtle"  type="submit">Отправить</button>

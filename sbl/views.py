@@ -1,6 +1,6 @@
-from django.urls import reverse_lazy, reverse
+from django.urls import reverse_lazy
 from sbl.models import Products, Blog
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 
 

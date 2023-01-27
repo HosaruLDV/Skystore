@@ -42,7 +42,7 @@ class Blog(models.Model):
     heading = models.CharField(max_length=250, verbose_name='Заголовк')
     slug = models.CharField(max_length=250, unique=True, verbose_name='slug')
     content = models.CharField(max_length=250, verbose_name='Содержимое')
-    image = models.CharField(max_length=100, verbose_name='Изображение')
+    image = models.FileField(upload_to="images/", verbose_name='Изображение', null=True)
     create_date = models.DateTimeField(auto_now_add=True)
     status = models.CharField(choices=STATUSES, default=STATUS_ACTIVE, max_length=15)
     view = models.IntegerField(verbose_name='Просмотры', default=0)
